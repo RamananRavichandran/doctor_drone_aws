@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Order</title>
+  <title>Products</title>
 
   <!-- Custom fonts for this template-->
   <link href="{{url_for('static',filename='vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -322,7 +322,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
                 <img class="img-profile rounded-circle" src="/img/2.jpg">
               </a>
               <!-- Dropdown - User Information -->
@@ -356,15 +356,16 @@
       <div class="container-fluid">
 
 
-
-<table class="table">
+<table class="table table-striped" id="dataTable">
   <thead>
+
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">manage Order</th>
-      <th scope="col">Add product</th>
-      <th scope="col">Make Order</th>
+      <th scope="col">Bill No.</th>
+      <th scope="col">Total Amount</th>
+      <th scope="col">Date</th>
+      <th scope="col">Action</th>
     </tr>
+
   </thead>
   <tbody>
 

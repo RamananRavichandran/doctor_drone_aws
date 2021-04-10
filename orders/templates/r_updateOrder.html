@@ -34,7 +34,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">HUB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">ROOT User <sup>2</sup></div>
       </a>
 
       <!-- Divider -->
@@ -42,7 +42,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="HubDash.html">
+        <a class="nav-link" href="RootDash.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -56,18 +56,11 @@
       </div>
 
     <!-- Nav Item - products -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-shopping-cart"></i>
-          <span>Product</span>
+       <li class="nav-item">
+        <a class="nav-link collapsed" href="product.html">
+          <i class="fas fa-store"></i>
+          <span>View Products</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Inventory</h6>
-            <a class="collapse-item" href="h_product.html">Add Products</a>
-            <a class="collapse-item" href="h_updateProduct.html">Manage Products</a>
-          </div>
-        </div>
       </li>
 
       <!-- Nav Item - Pages Collapse Menu -->
@@ -79,18 +72,10 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Inventory Orders</h6>
-            <a class="collapse-item" href="h_makeorder.html">Make order</a>
-            <a class="collapse-item" href="h_manageorder.html">Manage order</a>
+            <a class="collapse-item" href="makeorder.html">Make order</a>
+            <a class="collapse-item" href="manageorder.html">Manage order</a>
           </div>
         </div>
-      </li>
-
-       <!-- Nav Roles -->
-       <li class="nav-item">
-        <a class="nav-link collapsed" href="roles.html">
-          <i class="fas fa-store"></i>
-          <span>Manage Roles</span>
-        </a>
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
@@ -136,20 +121,6 @@
             <a class="collapse-item active" href="blank.html">Blank Page</a>
           </div>
         </div>
-      </li>
-
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
-      </li>
-
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
       </li>
 
       <!-- Divider -->
@@ -355,22 +326,46 @@
         <!-- Begin Page Content -->
       <div class="container-fluid">
 
+<h3 align="center">Add Remove Select Box Fields Dynamically using jQuery Ajax in PHP</h3>
+<br />
+<h4 align="center">Enter Item Details</h4>
+<br />
+<form method="post" action="">
+ <div class="table-repsonsive">
+  <span id="error"></span>
+  <table class="table table-bordered" id="item_table">
+   <tr>
+    <th>Enter Item barcode</th>
+    <th>Enter Quantity</th>
+    <th>Product name</th>
+    <th>Price</th>
+    <th>Total</th>
+    <th><button type="button" name="add" class="btn btn-success btn-sm add" onclick="addrow()"><i class="fas fa-plus"></i></button></th>
+   </tr>
+   <tbody>
 
+   </tbody>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">manage Order</th>
-      <th scope="col">Add product</th>
-      <th scope="col">Make Order</th>
-    </tr>
-  </thead>
-  <tbody>
+  </table>
+  <br><br>
+  <div class="col-md-6 ">
+  <div class="form-group">
+      <label for="gross_amount" class="col-sm-5 control-label">Gross Amount</label>
+      <div class="col-sm-7 ">
+        <input type="text" class="form-control" id="total_amount" name="total_amount" readonly value=""/>
 
+      </div>
+    </div>
 
-  </tbody>
-</table>
+    </div>
+
+<br><br><br>
+  <br>
+  <div align="center">
+   <input type="submit" class="btn btn-info" value="update" />
+  </div>
+ </div>
+</form>
 
 
 

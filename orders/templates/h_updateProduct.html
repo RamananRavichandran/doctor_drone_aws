@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>{% block title %}{% endblock %}</title>
+  <title>Order</title>
 
   <!-- Custom fonts for this template-->
   <link href="{{url_for('static',filename='vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -34,7 +34,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">HUB Admin <sup>2</sup></div>
       </a>
 
       <!-- Divider -->
@@ -42,7 +42,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="/">
+        <a class="nav-link" href="HubDash.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -55,12 +55,19 @@
         Interface
       </div>
 
-      <!-- Nav Item - products -->
+    <!-- Nav Item - products -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="/products">
-          <i class="fas fa-store"></i>
-          <span>Products</span>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-shopping-cart"></i>
+          <span>Product</span>
         </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Inventory</h6>
+            <a class="collapse-item" href="h_product.html">Add Products</a>
+            <a class="collapse-item" href="h_updateProduct.html">Manage Products</a>
+          </div>
+        </div>
       </li>
 
       <!-- Nav Item - Pages Collapse Menu -->
@@ -71,15 +78,23 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="/order">Make oreder</a>
-            <a class="collapse-item" href="/manageorder">Manage order</a>
+            <h6 class="collapse-header">Inventory Orders</h6>
+            <a class="collapse-item" href="h_makeorder.html">Make order</a>
+            <a class="collapse-item" href="h_manageorder.html">Manage order</a>
           </div>
         </div>
       </li>
 
+       <!-- Nav Roles -->
+       <li class="nav-item">
+        <a class="nav-link collapsed" href="roles.html">
+          <i class="fas fa-store"></i>
+          <span>Manage Roles</span>
+        </a>
+      </li>
+
       <!-- Nav Item - Utilities Collapse Menu -->
-      <!-- <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
           <span>Utilities</span>
@@ -93,18 +108,18 @@
             <a class="collapse-item" href="utilities-other.html">Other</a>
           </div>
         </div>
-      </li> -->
+      </li>
 
       <!-- Divider -->
-      <!-- <hr class="sidebar-divider"> -->
+      <hr class="sidebar-divider">
 
       <!-- Heading -->
-      <!-- <div class="sidebar-heading">
+      <div class="sidebar-heading">
         Addons
-      </div> -->
+      </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <!-- <li class="nav-item ">
+      <li class="nav-item ">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
           <span>Pages</span>
@@ -121,21 +136,21 @@
             <a class="collapse-item active" href="blank.html">Blank Page</a>
           </div>
         </div>
-      </li> -->
+      </li>
 
       <!-- Nav Item - Charts -->
-      <!-- <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Charts</span></a>
-      </li> -->
+      </li>
 
       <!-- Nav Item - Tables -->
-      <!-- <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link" href="tables.html">
           <i class="fas fa-fw fa-table"></i>
           <span>Tables</span></a>
-      </li> -->
+      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -260,7 +275,7 @@
                 </h6>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="{{url_for('static',filename='img/2.jpg')}}" alt="">
+                    <img class="rounded-circle" src="/img/2.jpg" alt="">
                     <div class="status-indicator bg-success"></div>
                   </div>
                   <div class="font-weight-bold">
@@ -270,7 +285,7 @@
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="{{url_for('static',filename='img/2.jpg')}}" alt="">
+                    <img class="rounded-circle" src="/img/2.jpg" alt="">
                     <div class="status-indicator"></div>
                   </div>
                   <div>
@@ -280,7 +295,7 @@
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="{{url_for('static',filename='img/2.jpg')}}" alt="">
+                    <img class="rounded-circle" src="/img/2.jpg" alt="">
                     <div class="status-indicator bg-warning"></div>
                   </div>
                   <div>
@@ -290,7 +305,7 @@
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="{{url_for('static',filename='img/2.jpg')}}" alt="">
+                    <img class="rounded-circle" src="/img/2.jpg" alt="">
                     <div class="status-indicator bg-success"></div>
                   </div>
                   <div>
@@ -308,7 +323,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                <img class="img-profile rounded-circle" src="{{url_for('static',filename='img/2.jpg')}}">
+                <img class="img-profile rounded-circle" src="/img/2.jpg">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -339,9 +354,49 @@
 
         <!-- Begin Page Content -->
       <div class="container-fluid">
-        {% block body %}
 
-        {% endblock %}
+<h3 align="center">Add Remove Select Box Fields Dynamically using jQuery Ajax in PHP</h3>
+<br />
+<h4 align="center">Enter Item Details</h4>
+<br />
+<form method="post" action="">
+ <div class="table-repsonsive">
+  <span id="error"></span>
+  <table class="table table-bordered" id="item_table">
+   <tr>
+    <th>Enter Item barcode</th>
+    <th>Enter Quantity</th>
+    <th>Product name</th>
+    <th>Price</th>
+    <th>Total</th>
+    <th><button type="button" name="add" class="btn btn-success btn-sm add" onclick="addrow()"><i class="fas fa-plus"></i></button></th>
+   </tr>
+   <tbody>
+
+   </tbody>
+
+  </table>
+  <br><br>
+  <div class="col-md-6 ">
+  <div class="form-group">
+      <label for="gross_amount" class="col-sm-5 control-label">Gross Amount</label>
+      <div class="col-sm-7 ">
+        <input type="text" class="form-control" id="total_amount" name="total_amount" readonly value=""/>
+
+      </div>
+    </div>
+
+    </div>
+
+<br><br><br>
+  <br>
+  <div align="center">
+   <input type="submit" class="btn btn-info" value="update" />
+  </div>
+ </div>
+</form>
+
+
 
       </div>
 
@@ -388,7 +443,6 @@
       </div>
     </div>
   </div>
-
   <!-- Bootstrap core JavaScript-->
   <script src="{{url_for('static',filename='vendor/jquery/jquery.min.js')}}"></script>
   <script src="{{url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -411,7 +465,7 @@
 
   <!-- Page level custom scripts -->
   <script src="{{url_for('static',filename='js/demo/datatables-demo.js')}}"></script>
-  {% block moreScripts %}{% endblock%}
+
 </body>
 
 </html>

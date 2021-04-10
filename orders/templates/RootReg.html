@@ -19,6 +19,7 @@
   <!-- Custom styles for this template-->
   <link href="{{url_for('static',filename='css/sb-admin-2.min.css')}}" rel="stylesheet">
 
+
 </head>
 
 <body id="page-top">
@@ -37,38 +38,34 @@
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                    <h1 class="h4 text-gray-900 mb-4">Welcome!</h1>
                   </div>
                   <form class="user" method="post" id="myform">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" name="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                        <input type="email" class="form-control form-control-user" name="name" id="exampleInputName" aria-describedby="emailHelp" placeholder="Enter your Name">
+                      </div>
+                    <div class="form-group">
+                      <input type="email" class="form-control form-control-user" name="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter e-mail address">
                     </div>
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" name="password" id="exampleInputPassword" placeholder="Password">
                     </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control form-control-user" name="Cnfpassword" id="exampleInputCnfPassword" placeholder="Confirm Password">
+                      </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
                         <input type="checkbox" class="custom-control-input" id="customCheck">
                         <label class="custom-control-label" for="customCheck">Remember Me</label>
                       </div>
                     </div>
-                    <a href="RootDash.html" onclick="document.getElementById('myform').submit()" class="btn btn-primary btn-user btn-block">
-                      Click for USER Login
-                    </a>
-                    <a href="HubDash.html" onclick="document.getElementById('myform').submit()" class="btn btn-primary btn-user btn-block">
-                        Click for HUB Login
+                    <a href="RootDash.html" class="btn btn-primary btn-user btn-block">
+                        Register
                       </a>
                   </form>
                   <br>
                   <div class="text-center">
-                    <a class="small" href="forgot-password.html">Forgot Password?</a>
-                  </div>
-                  <hr>
-                  <div class="text-center">
-                    <a class="small" href="RootReg.html">Create an Account for ROOT!</a>
-                  </div>
-                  <div class="text-center">
-                    <a class="small" href="HubReg.html">Create an Account for HUB!</a>
+                    <a class="small" href="login.html">Alredy a user? Sign in</a>
                   </div>
                 </div>
               </div>

@@ -322,7 +322,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
                 <img class="img-profile rounded-circle" src="/img/2.jpg">
               </a>
               <!-- Dropdown - User Information -->
@@ -355,22 +355,46 @@
         <!-- Begin Page Content -->
       <div class="container-fluid">
 
+<h3 align="center">Add Remove Select Box Fields Dynamically using jQuery Ajax in PHP</h3>
+<br />
+<h4 align="center">Enter Item Details</h4>
+<br />
+<form method="post" action="">
+ <div class="table-repsonsive">
+  <span id="error"></span>
+  <table class="table table-bordered" id="item_table">
+   <tr>
+    <th>Enter Item barcode</th>
+    <th>Enter Quantity</th>
+    <th>Product name</th>
+    <th>Price</th>
+    <th>Total</th>
+    <th><button type="button" name="add" class="btn btn-success btn-sm add" onclick="addrow()"><i class="fas fa-plus"></i></button></th>
+   </tr>
+   <tbody>
 
+   </tbody>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">manage Order</th>
-      <th scope="col">Add product</th>
-      <th scope="col">Make Order</th>
-    </tr>
-  </thead>
-  <tbody>
+  </table>
+  <br><br>
+  <div class="col-md-6 ">
+  <div class="form-group">
+      <label for="gross_amount" class="col-sm-5 control-label">Gross Amount</label>
+      <div class="col-sm-7 ">
+        <input type="text" class="form-control" id="total_amount" name="total_amount" readonly value=""/>
 
+      </div>
+    </div>
 
-  </tbody>
-</table>
+    </div>
+
+<br><br><br>
+  <br>
+  <div align="center">
+   <input type="submit" class="btn btn-info" value="update" />
+  </div>
+ </div>
+</form>
 
 
 
