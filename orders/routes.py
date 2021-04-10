@@ -14,9 +14,9 @@ def getlist():
     return my_list
 
 
-@app.route('/dashboard')
+@app.route('/rootdash')
 @login_required
-def dashboard():
+def rootdash():
     order = db.session.query(Orders).filter(func.date(Orders.date_creation) == date.today()).all()
     count = 0
     for i in order:
@@ -28,13 +28,34 @@ def dashboard():
         'orders' : num_orders
     }
 
-    return render_template('index.html',context=context)
+    return render_template('RootDash.html',context=context)
 
+@app.route('/HubDash.html')
+@login_required
+def hubdash():
+    order = db.session.query(Orders).filter(func.date(Orders.date_creation) == date.today()).all()
+    count = 0
+    for i in order:
+        count += int(i.total_amount)
+    num_orders = db.session.query(Orders).filter(func.date(Orders.date_creation) == date.today()).count()
+
+    context = {
+        'daily' : count,
+        'orders' : num_orders
+    }
+
+    return render_template('HubDash.html',context=context)
 
 @app.route('/',methods=['POST','GET'])
 def login():
+
+    return render_template('login.html')
+
+
+@app.route('/rootlogin',methods=['POST','GET'])
+def rootlogin():
     if current_user.is_authenticated:
-        return redirect(url_for('dashboard'))
+        return redirect(url_for('rootdash'))
     if request.method == 'POST':
         # Get Form Fields
         email = request.form['email']
@@ -47,7 +68,35 @@ def login():
             if sha256_crypt.verify(password_candidate, passwordd.password):
                 login_user(user)
                 #flash('You are now logged in', 'success')
-                return redirect(url_for('dashboard'))
+                return redirect(url_for('rootdash'))
+
+            else:
+                error = "Invalid Password"
+                return render_template('login.html', error=error)
+
+        else:
+            error = "Invalid email"
+            return render_template('login.html', error=error)
+
+    return render_template('login.html')
+
+@app.route('/hublogin',methods=['POST','GET'])
+def hublogin():
+    if current_user.is_authenticated:
+        return redirect(url_for('hubdash'))
+    if request.method == 'POST':
+        # Get Form Fields
+        email = request.form['email']
+        password_candidate = request.form['password']
+
+        user=Users.query.filter_by(email=email).first()
+        if user:
+
+            passwordd=Users.query.filter_by(email=email).first()
+            if sha256_crypt.verify(password_candidate, passwordd.password):
+                login_user(user)
+                #flash('You are now logged in', 'success')
+                return redirect(url_for('hubdash'))
 
             else:
                 error = "Invalid Password"
@@ -68,7 +117,7 @@ def logout():
 @app.route('/register',methods=['POST','GET'])
 def register():
     if current_user.is_authenticated:
-        return redirect(url_for('dashboard'))
+        return redirect(url_for('rootlogin'))
     form = RegisterForm(request.form)
     if request.method == 'POST' and form.validate():
         email = form.email.data
