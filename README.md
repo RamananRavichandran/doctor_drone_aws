@@ -71,5 +71,7 @@ Central Inventory Pages:
 ![image](https://user-images.githubusercontent.com/30053078/114316010-52c70c00-9b1f-11eb-9185-456c2af4345e.png)
 
 
+![image](https://user-images.githubusercontent.com/30053078/114319329-98d79c00-9b2e-11eb-8199-9035176419e4.png)
+
 
 
