@@ -34,7 +34,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">ROOT User <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">Remote Hospital <sup>1</sup></div>
       </a>
 
       <!-- Divider -->
@@ -42,7 +42,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="RootDash.html">
+        <a class="nav-link" href="/rootdash">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -57,7 +57,7 @@
 
     <!-- Nav Item - products -->
        <li class="nav-item">
-        <a class="nav-link collapsed" href="r_product.html">
+        <a class="nav-link collapsed" href="/rootproduct">
           <i class="fas fa-store"></i>
           <span>View Products</span>
         </a>
@@ -72,25 +72,8 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Inventory Orders</h6>
-            <a class="collapse-item" href="r_makeorder.html">Make order</a>
-            <a class="collapse-item" href="r_manageorder.html">Manage order</a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Utilities</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Colors</a>
-            <a class="collapse-item" href="utilities-border.html">Borders</a>
-            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
+            <a class="collapse-item" href="/rootorder">Make order</a>
+            <a class="collapse-item" href="/rootmanageorder">Manage order</a>
           </div>
         </div>
       </li>
@@ -115,11 +98,6 @@
             <a class="collapse-item" href="login.html">Login</a>
             <a class="collapse-item" href="register.html">Register</a>
             <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-            <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item active" href="blank.html">Blank Page</a>
-          </div>
         </div>
       </li>
 
@@ -327,22 +305,70 @@
       <div class="container-fluid">
 
 
-<table class="table table-striped" id="dataTable">
-  <thead>
-
-    <tr>
-      <th scope="col">Bill No.</th>
-      <th scope="col">Total Amount</th>
-      <th scope="col">Date</th>
-      <th scope="col">Action</th>
-    </tr>
-
-  </thead>
-  <tbody>
-
-
-  </tbody>
-</table>
+        <table class="table table-striped" id="dataTable">
+          <thead>
+        
+            <tr>
+              <th scope="col">Bill No.</th>
+              <th scope="col">Total Amount</th>
+              <th scope="col">Date</th>
+              <th scope="col">Action</th>
+            </tr>
+        
+          </thead>
+          <tbody>
+            <tr>
+              <th>1</th>
+              <td>1000</td>
+              <td>2021-04-05 18:05:35.394356</td>
+              <td>
+                 <a href="/printInvoice"></a><button type="button" class="btn btn-success btn-circle btn-sm"><i class="fas fa-print"></i></button></a>
+                 <a href="/order/update"><button type="button" class="btn btn-primary btn-circle btn-sm"> <i class="far fa-edit"></i></button></a>
+                 <a  data-toggle="modal" data-target="#deleteModal"><button type="button" class="btn btn-danger btn-circle btn-sm"> <i class="far fa-trash-alt"></i></button></a>
+              </td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>220</td>
+              <td>2021-04-05 19:10:35.635934</td>
+              <td>
+                 <a href="/printInvoice"></a><button type="button" class="btn btn-success btn-circle btn-sm"><i class="fas fa-print"></i></button></a>
+                 <a href="/order/update"><button type="button" class="btn btn-primary btn-circle btn-sm"> <i class="far fa-edit"></i></button></a>
+                 <a  data-toggle="modal" data-target="#deleteModal"><button type="button" class="btn btn-danger btn-circle btn-sm"> <i class="far fa-trash-alt"></i></button></a>
+              </td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>350</td>
+              <td>2021-04-11 19:10:35.635934</td>
+              <td>
+                 <a href="/printInvoice"></a><button type="button" class="btn btn-success btn-circle btn-sm"><i class="fas fa-print"></i></button></a>
+                 <a href="/order/update"><button type="button" class="btn btn-primary btn-circle btn-sm"> <i class="far fa-edit"></i></button></a>
+                 <a  data-toggle="modal" data-target="#deleteModal"><button type="button" class="btn btn-danger btn-circle btn-sm"> <i class="far fa-trash-alt"></i></button></a>
+              </td>
+            </tr>
+           <!-- delete model -->
+            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Delete Product?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <form  method="POST">
+                      <input class="btn btn-danger" type="submit" value="Delete">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+          </tbody>
+        </table>
 
 
 

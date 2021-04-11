@@ -34,7 +34,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">HUB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">Centralized Inventory <sup>2</sup></div>
       </a>
 
       <!-- Divider -->
@@ -42,7 +42,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="HubDash.html">
+        <a class="nav-link" href="/hubdash">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -64,13 +64,11 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Inventory</h6>
-            <a class="collapse-item" href="h_product.html">Add Products</a>
-            <a class="collapse-item" href="h_updateProduct.html">Manage Products</a>
+            <a class="collapse-item" href="/hubproductadd">Add Products</a>
           </div>
         </div>
       </li>
 
-      <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-shopping-cart"></i>
@@ -79,8 +77,8 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Inventory Orders</h6>
-            <a class="collapse-item" href="h_makeorder.html">Make order</a>
-            <a class="collapse-item" href="h_manageorder.html">Manage order</a>
+            <a class="collapse-item" href="/huborder">Make order</a>
+            <a class="collapse-item" href="/hubmanageorder">Manage order</a>
           </div>
         </div>
       </li>
@@ -322,7 +320,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
                 <img class="img-profile rounded-circle" src="/img/2.jpg">
               </a>
               <!-- Dropdown - User Information -->
@@ -421,7 +419,36 @@
 
   </thead>
   <tbody>
-
+    {% for product in products %}
+    <tr>
+      <th>{{product.name}}</th>
+      <td>{{product.barcode}}</td>
+      <td>{{product.quantity}}</td>
+      <td>{{product.price}}</td>
+      <td> <a href="/product/update/{{product.id}}"><button type="button" class="btn btn-primary btn-circle btn-sm"> <i class="far fa-edit"></i></button></a>
+         <a  data-toggle="modal" data-target="#deleteModal{{product.id}}"><button type="button" class="btn btn-danger btn-circle btn-sm"> <i class="far fa-trash-alt"></i></button></a>
+      </td>
+    </tr>
+   <!-- delete model -->
+    <div class="modal fade" id="deleteModal{{product.id}}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteModalLabel">Delete Product?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <form action="{{ url_for('delete_product', product_id=product.id) }}" method="POST">
+              <input class="btn btn-danger" type="submit" value="Delete">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
 
   </tbody>
 </table>
