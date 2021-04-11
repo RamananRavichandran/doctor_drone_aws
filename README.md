@@ -53,8 +53,6 @@ Remote Hospital Pages :
 
 ![image](https://user-images.githubusercontent.com/34280343/114315404-7e94c280-9b1c-11eb-9589-d8af9c4f1891.png)
 
-![image](https://user-images.githubusercontent.com/34280343/114315423-8f453880-9b1c-11eb-9e83-c209977e412e.png)
-
 ![image](https://user-images.githubusercontent.com/34280343/114315434-a1bf7200-9b1c-11eb-965f-e09275057a87.png)
 
 ![image](https://user-images.githubusercontent.com/34280343/114315443-af74f780-9b1c-11eb-928d-fd59d7604605.png)
@@ -69,6 +67,9 @@ Central Inventory Pages:
 ![image](https://user-images.githubusercontent.com/34280343/114315514-ee0ab200-9b1c-11eb-8a73-7998d10dfa75.png)
 
 ![image](https://user-images.githubusercontent.com/34280343/114315525-f95ddd80-9b1c-11eb-980d-8983f54f35b3.png)
+
+![image](https://user-images.githubusercontent.com/30053078/114316010-52c70c00-9b1f-11eb-9185-456c2af4345e.png)
+
 
 
 
